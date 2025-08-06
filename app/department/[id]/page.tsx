@@ -5,8 +5,8 @@ type Params = {
 };
 
 export default async function MasnPage({ params }: Params) {
-  let {id}= await params
-  let department=data.departments[id]
+  const {id}= await params
+  const department=data.departments[id]
   console.log(department.color);
   
   return (

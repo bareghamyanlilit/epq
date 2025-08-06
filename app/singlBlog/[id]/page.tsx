@@ -8,7 +8,7 @@ type Params = {
 export default async function SinglBlogPage({ params }: Params) {
   const { id } = await params;
 
-  let blog = data.blogInfo.infoVideo[id];
+  const blog = data.blogInfo.infoVideo[id];
   return (
     <div className="SinglBlogPage">
       <div className="relative w-full h-[70vh]">
