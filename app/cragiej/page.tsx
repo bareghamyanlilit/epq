@@ -84,6 +84,17 @@ export default function MasnPage() {
           </div>
         </div>
       </div>
+
+      <div className="profs">
+        <h1 className="w-full py-8 text-center text-3xl bg-[#004471] text-white my-5">{data.infoProgrammingDepartment.infoProfs.title}</h1>
+        <div className="flex justify-around my-5">
+          {data.infoProgrammingDepartment.infoProfs.info.map((item)=> <div className="w-max flex flex-col gap-2">
+              <img className="w-[300px] h-[300px] object-cover" src={item.src} alt={item.name} />
+              <h1 className="font-bold text-xl">{item.name}</h1>
+              <p>{item.descr}</p>
+          </div>)}
+        </div>
+      </div>
     </div>
   );
 }
