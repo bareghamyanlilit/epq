@@ -33,23 +33,7 @@ export default function HomePage() {
           })
         }
       </div>
-      <hr className="  my-5 border-0 bg-[#004471] h-[80px]"/>
-      <div className="infoImg container">
-        {
-          data.homeInfo.infoVideo.map((elm,i)=> {
-            const direction: 'row' | 'row-reverse' = i % 2 == 0 ? 'row-reverse':'row'
-            return(
-              <div className=" flex justify-center" style={{flexDirection:direction}} key={i}>
-                <p className=" w-2xl h-full text-gray-700 text-center content-center p-10">{elm[0]}</p>
-                {/* <video className=" w-2xl h-full object-cover" src={elm[1]}  controls muted /> */}
-                <video className="w-[400px] object-cover" controls autoPlay muted loop>
-                <source src={elm[1]} type="video/mp4" /> Ձեր դիտարկիչը չի աջակցում տեսանյութերի նվագարկմանը։</video>
-
-              </div>
-            )
-          })
-        }
-      </div>
+      {/* <hr className="  my-5 border-0 bg-[#004471] h-[80px]"/> */}
     </div>
     
   );

@@ -40,7 +40,7 @@ export default function DepartmentsPage() {
               <img src={e.childImg} alt={e.title} className="w-20 h-20 object-contain" />
               <h3 className="text-3xl font-semibold">{e.title}</h3>
               <p className=" text-xl text-gray-700">{e.descr}</p>
-              <Link href={e.href} className=" text-xl text-blue-600 underline hover:text-blue-800">
+              <Link href={`/department/${i}`} className=" text-xl text-blue-600 underline hover:text-blue-800">
                 {e.linkTxt}
               </Link>
             </div>

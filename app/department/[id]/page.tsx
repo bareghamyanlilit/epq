@@ -1,16 +1,24 @@
-import { data } from "../../data";
+import { data } from "../../../data";
 
-export default function MasnPage() {
+type Params = {
+  params: Promise<{ id: number }>;
+};
 
+export default async function MasnPage({ params }: Params) {
+  let {id}= await params
+  let department=data.departments[id]
+  console.log(department.color);
+  
   return (
     <div className="masn">
       <div
-        className={`hero bg-[${data.infoProgrammingDepartment.color}] text-white text-center border-t-2 border-white p-12`}
+       style={{ backgroundColor: department.color }}
+        className={`hero  text-white text-center border-t-2 border-white p-12`}
       >
         <h1 className="text-2xl font-bold">
-          {data.infoProgrammingDepartment.title}
+          {department.title}
         </h1>
-        <p className="mt-4 text-lg">{data.infoProgrammingDepartment.descr}</p>
+        <p className="mt-4 text-lg">{department.descr}</p>
       </div>
 
       <div className="about mb-24   container w-[80%] mx-auto">
@@ -29,19 +37,19 @@ export default function MasnPage() {
 
             <div className="text py-10">
               <h2 className="text-2xl/8 font-bold mb-5">
-                {data.infoProgrammingDepartment.departmentTitle}
+                {department.departmentTitle}
               </h2>
               <p className=" text-xl/8">
-                {data.infoProgrammingDepartment.departmentDescr}
+                {department.departmentDescr}
               </p>
             </div>
 
             <div className="boxs">
               <h3 className="title text-center text-3xl font-semibold mb-6">
-                {data.infoProgrammingDepartment.infoParts.title}
+                {department.infoParts.title}
               </h3>
               <div className="box_items flex flex-wrap gap-20">
-                {data.infoProgrammingDepartment.infoParts.info.map((item, i) => (
+                {department.infoParts.info.map((item, i) => (
                   <div key={i}>
                     <div className="relative flex items-center  mb-12">
                       <img
@@ -69,7 +77,7 @@ export default function MasnPage() {
 
       <div className="events">
         <h2 className="title text-center text-2xl font-bold mb-10">
-          {data.infoProgrammingDepartment.partImgTitle}
+          {department.partImgTitle}
         </h2>
         <div className="container mx-auto px-4">
           <div className="images flex flex-wrap justify-center gap-5">
@@ -86,9 +94,9 @@ export default function MasnPage() {
       </div>
 
       <div className="profs">
-        <h1 className="w-full py-8 text-center text-3xl bg-[#004471] text-white my-5">{data.infoProgrammingDepartment.infoProfs.title}</h1>
+        <h1 className="w-full py-8 text-center text-3xl bg-[#004471] text-white my-5">{department.infoProfs.title}</h1>
         <div className="flex justify-around my-5">
-          {data.infoProgrammingDepartment.infoProfs.info.map((item,i)=> <div key={i} className="w-max flex flex-col gap-2">
+          {department.infoProfs.info.map((item,i)=> <div key={i} className="w-max flex flex-col gap-2">
               <img className="w-[300px] h-[300px] object-cover" src={item.src} alt={item.name} />
               <h1 className="font-bold text-xl">{item.name}</h1>
               <p>{item.descr}</p>
