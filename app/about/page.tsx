@@ -2,13 +2,13 @@ import Link from "next/link";
 import { data } from "../../data";
 export default function AboutPage() {
   return (
-    <div className="AboutPage  container w-[80%] mx-auto">
+    <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto">
       <div className="">
-        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-18 mb-7">
+        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-18 mb-7 hidden sm:block">
           {data.aboutInfo.title}
         </h2>
-        <h4 className=" text-2xl font-bold">{data.aboutInfo.title2}</h4>
-        <p className=" text-xl/8">{data.aboutInfo.descr}</p>
+        <h4 className=" text-xl font-bold sm:text-2xl py-4">{data.aboutInfo.title2}</h4>
+        <p className="text-sm sm:text-xl/8">{data.aboutInfo.descr}</p>
 
         <video
           className="w-full max-h-[600px] object-cover mt-12"
@@ -23,14 +23,14 @@ export default function AboutPage() {
       </div>
 
       <div className=" justify-items-center">
-        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
+        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
           {data.aboutInfo.departmentsPartTitle}
         </h2>
-        <ul className="grid gap-8 w-2xl">
+        <ul className="grid gap-4 sm:gap-8 w-full sm:w-2xl">
           {data.aboutInfo.departments.map((e, i) => (
             <li
               key={i}
-              className=" cursor-pointer bg-white px-[25px] py-[18px] rounded-[12px] no-underline text-[20px] text-[#004471] font-medium shadow-[0_6px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-in-out  hover:bg-[#004471] hover:text-white hover:-translate-y-1 hover:scale-[1.02]"
+              className=" cursor-pointer bg-white px-[25px] py-2 sm:py-[18px] rounded-[12px] no-underline text-sm sm:text-[20px] text-[#004471] font-medium shadow-[0_6px_12px_rgba(0,0,0,0.06)] transition-all duration-300 ease-in-out  hover:bg-[#004471] hover:text-white hover:-translate-y-1 hover:scale-[1.02]"
             >
               <Link href={e.href}>{e.descr}</Link>
             </li>
@@ -39,24 +39,24 @@ export default function AboutPage() {
       </div>
 
       <div>
-        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
+        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
           {data.aboutInfo.admissionsData.title}
         </h2>
-        <p className="mb-4 text-[17px] leading-relaxed text-[#1a1a1a]">
+        <p className="mb-4 text-sm sm:text-xl/8 text-[#1a1a1a]">
           {data.aboutInfo.admissionsData.descr}
         </p>
 
         <div className="overflow-x-auto ">
-          <table className="w-full border-0 text-left text-[16px]">
+          <table className="w-full border-0 text-left text-sm sm:text-base">
             <thead>
-              <tr className="bg-[#003865] text-white text-xl">
-                <th className="px-6 py-5 font-bold">
+              <tr className="bg-[#003865] text-white  text-sm sm:text-xl">
+                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
                   {data.aboutInfo.admissionsData.table[0][0]}
                 </th>
-                <th className="px-6 py-5 font-bold">
+                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
                   {data.aboutInfo.admissionsData.table[0][1]}
                 </th>
-                <th className="px-6 py-5 font-bold">
+                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
                   {data.aboutInfo.admissionsData.table[0][2]}
                 </th>
               </tr>
@@ -64,9 +64,9 @@ export default function AboutPage() {
             <tbody className="divide-y divide-gray-100">
               {data.aboutInfo.admissionsData.table.slice(1).map((e, i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50" } >
-                  <td className="px-6 py-5">{e[0]}</td>
-                  <td className="px-6 py-5">{e[1]}</td>
-                  <td className="px-6 py-5">{e[2]}</td>
+                  <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[0]}</td>
+                  <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[1]}</td>
+                  <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[2]}</td>
                 </tr>
               ))}
             </tbody>
@@ -75,24 +75,24 @@ export default function AboutPage() {
       </div>
 
       <div>
-        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-22 mb-10">
+        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
           {data.aboutInfo.remotelyAdmissionsData.title}
         </h2>
-        <p className="mb-4 text-[17px] leading-relaxed text-[#1a1a1a]">
+        <p className="mb-4 text-sm sm:text-xl/8 text-[#1a1a1a]">
           {data.aboutInfo.remotelyAdmissionsData.descr}
         </p>
 
         <div className="overflow-x-auto ">
-          <table className="w-full border-0 text-left text-[16px]">
+          <table className="w-full border-0 text-left text-sm sm:text-base">
             <thead>
-              <tr className="bg-[#003865] text-white  text-xl">
-                <th className="px-6 py-5 font-bold">
+              <tr className="bg-[#003865] text-white  text-sm sm:text-xl">
+                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
                   {data.aboutInfo.remotelyAdmissionsData.table[0][0]}
                 </th>
-                <th className="px-6 py-5 font-bold">
+                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
                   {data.aboutInfo.remotelyAdmissionsData.table[0][1]}
                 </th>
-                <th className="px-6 py-5 font-bold">
+                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
                   {data.aboutInfo.remotelyAdmissionsData.table[0][2]}
                 </th>
               </tr>
@@ -100,9 +100,9 @@ export default function AboutPage() {
             <tbody className="divide-y divide-gray-100">
               {data.aboutInfo.remotelyAdmissionsData.table.slice(1).map((e, i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  <td className="px-6 py-5">{e[0]}</td>
-                  <td className="px-6 py-5">{e[1]}</td>
-                  <td className="px-6 py-5">{e[2]}</td>
+                  <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[0]}</td>
+                  <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[1]}</td>
+                  <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[2]}</td>
                 </tr>
               ))}
             </tbody>
@@ -111,7 +111,7 @@ export default function AboutPage() {
       </div>
 
       <div className="px-4 md:px-8 py-8">
-        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
+        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
           {data.aboutInfo.partnersPartTitle}
         </h2>
 

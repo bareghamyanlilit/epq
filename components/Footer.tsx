@@ -1,46 +1,65 @@
 'use client'
 import Link from 'next/link';
-import {data} from '../data'
+import { data } from '../data';
 import Image from 'next/image';
+
 export function Footer() {
-    return (
-      <div className="Footer container bg-[#004471] text-[#fff] py-10 px-5 font-[Segoe UI, sans-serif] flex justify-around text-center"> 
-        <div className='flex flex-col gap-5 w-[300px]' >
-          <h2 className='text-2xl font-bold'>{data.footer.firstInfo.title}</h2>
-          <p >{data.footer.firstInfo.descr}</p>
+  return (
+    <footer className="Footer bg-[#004471] text-white py-10 px-5 font-[Segoe UI, sans-serif]">
+      <div className="container mx-auto flex flex-col md:flex-row flex-wrap justify-around gap-10 text-center md:text-left">
+
+        {/* About / First Info */}
+        <div className="flex flex-col gap-4 md:w-[250px]">
+          <h2 className="text-xl sm:text-2xl font-bold">{data.footer.firstInfo.title}</h2>
+          <p className="text-sm sm:text-base">{data.footer.firstInfo.descr}</p>
         </div>
 
-        <div className='flex flex-col gap-5'>
-          <h2 className='text-2xl font-bold'>{data.footer.pagesLinks.title}</h2>
-          <ul>
-            {
-              data.footer.pagesLinks.links.map((item)=><li key={item.href+item.name}>
-                <Link href={item.href}>{item.name}</Link>
-              </li>)
-            }
+        {/* Pages Links */}
+        <div className="flex flex-col gap-4 md:w-[200px]">
+          <h2 className="text-xl sm:text-2xl font-bold">{data.footer.pagesLinks.title}</h2>
+          <ul className="flex flex-col gap-2 text-sm sm:text-base">
+            {data.footer.pagesLinks.links.map((item) => (
+              <li key={item.href + item.name}>
+                <Link href={item.href} className="hover:underline">{item.name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
-        
-        <div className='flex flex-col gap-5'>
-          <h2 className='text-2xl font-bold'>{data.footer.contactInfo.title}</h2>
-          <div>
+
+        {/* Contact Info */}
+        <div className="flex flex-col gap-4 md:w-[250px]">
+          <h2 className="text-xl sm:text-2xl font-bold">{data.footer.contactInfo.title}</h2>
+          <div className="text-sm sm:text-base">
             <p>{data.footer.contactInfo.loc}</p>
             <p>{data.footer.contactInfo.phone}</p>
             <p>{data.footer.contactInfo.email}</p>
           </div>
         </div>
 
-        <div className='flex flex-col gap-5'>
-          <h2 className='text-2xl font-bold'>{data.footer.socials.title}</h2>
-          <ul className='flex gap-2.5'>
-            {
-              data.footer.socials.socImg.map((item)=><li key={item}>
-                <Image src={item} alt='item' width={40} height={40}/>
-              </li>)
-            }
+        {/* Socials */}
+        <div className="flex flex-col gap-4 md:w-[200px]">
+          <h2 className="text-xl sm:text-2xl font-bold">{data.footer.socials.title}</h2>
+          <ul className="flex justify-center md:justify-start gap-3">
+            {data.footer.socials.socImg.map((item, idx) => (
+              <li key={idx}>
+                <Image 
+                  src={item} 
+                  alt={`social-${idx}`} 
+                  width={40} 
+                  height={40} 
+                  className="hover:scale-110 transition-transform duration-200"
+                />
+              </li>
+            ))}
           </ul>
         </div>
+
       </div>
-    );
-  }
-  
+
+      {/* Copyright */}
+      <div className="mt-10 text-center text-sm sm:text-base opacity-80">
+        © {new Date().getFullYear()} Էջմիածնի Վարդգես Համազասպյանի անվան պետական քոլեջ
+      </div>
+    </footer>
+  );
+}
