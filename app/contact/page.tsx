@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { data } from "../../data";
+import { data } from "../../data/dataAM";
 export default function ContactPage() {
   return (
-    <div className="ContactPage">
+    <div className="ContactPage  mt-20 sm:mt-26">
   {/* Hero Section */}
   <div className="relative w-full h-[30vh] sm:h-[70vh] flex items-center justify-center">
     <Image
@@ -45,7 +45,7 @@ export default function ContactPage() {
             <img
               src="/img/insta.png"
               alt="Instagram"
-              className="w-[40px] sm:w-[50px] rounded-full hover:scale-110 transition-transform duration-200"
+              className="w-[40px] sm:w-[50px] rounded-full hover:scale-110 transition-transform duration-200 "
             />
           </a>
         </div>

@@ -1,4 +1,6 @@
-import { data } from "../../../data";
+
+import P from "@/components/descr";
+import { data } from "../../../data/dataAM";
 
 type Params = {
   params: Promise<{ id: number }>;
@@ -10,7 +12,7 @@ export default async function MasnPage({ params }: Params) {
   console.log(department.color);
   
   return (
-    <div className="masn">
+    <div className="masn  mt-20 sm:mt-26">
       <div
        style={{ backgroundColor: department.color }}
         className={`hero  text-white text-center border-t-2 border-white p-6 sm:p-12`}
@@ -18,7 +20,8 @@ export default async function MasnPage({ params }: Params) {
         <h1 className="text-base sm:text-2xl font-bold">
           {department.title}
         </h1>
-        <p className="mt-4 text-sm sm:text-lg">{department.descr}</p>
+        
+        <P txt={department.descr} className="mt-4 text-white"></P>
       </div>
 
       <div className="about mb-24 container w-full sm:w-[80%] mx-auto">
@@ -39,9 +42,7 @@ export default async function MasnPage({ params }: Params) {
               <h2 className=" text-xl sm:text-2xl/8 font-bold mb-5">
                 {department.departmentTitle}
               </h2>
-              <p className="  text-sm sm:text-xl/8">
-                {department.departmentDescr}
-              </p>
+        <P txt={department.departmentDescr}></P>
             </div>
 
             <div className="boxs">
@@ -63,7 +64,7 @@ export default async function MasnPage({ params }: Params) {
                         <h3 className="text-base sm:text-2xl font-bold mb-3">
                           {item.title}
                         </h3>
-                        <p className=" text-sm sm:text-xl/8 leading-relaxed">{item.desc}</p>
+                         <P txt={item.desc}></P>
                       </div>
                     </div>
                     <hr className="bg-[#003865] h-[3px] sm:h-[6px] sm:w-[180%] border-0" />

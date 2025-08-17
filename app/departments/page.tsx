@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { data } from "../../data";
+import { data } from "../../data/dataAM";
+import P from "@/components/descr";
 
 export default function DepartmentsPage() {
   return (
-    <div className="DepartmentsPage">
+    <div className="DepartmentsPage  mt-20 sm:mt-26">
       {/* Hero Section (80vh) */}
       <div className="relative w-full h-[50vh] sm:h-[80vh] mb-6 sm:mb-0">
         <Image
@@ -22,6 +23,7 @@ export default function DepartmentsPage() {
             <p className="text-white mt-2 text-base md:text-xl">
               {data.departmentsInfo.descr}
             </p>
+            
           </div>
         </div>
       </div>
@@ -43,7 +45,7 @@ export default function DepartmentsPage() {
                   className="hidden sm:block w-20 h-20 object-contain"
                 />
                 <h3 className=" text-xl sm:text-3xl font-semibold">{e.title}</h3>
-                <p className=" text-sm sm:text-xl text-gray-700">{e.descr}</p>
+                <P txt={e.descr} className="mt-4"></P>
                 <Link
                   href={`/department/${i}`}
                   className=" text-xl text-blue-600 underline hover:text-blue-800"

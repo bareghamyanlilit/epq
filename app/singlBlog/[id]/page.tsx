@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { data } from "../../../data";
+import { data } from "../../../data/dataAM";
+import P from "@/components/descr";
 
 type Params = {
   params: Promise<{ id: number }>;
@@ -10,7 +11,7 @@ export default async function SinglBlogPage({ params }: Params) {
 
   const blog = data.blogInfo.infoVideo[id];
   return (
-    <div className="SinglBlogPage">
+    <div className="SinglBlogPage  mt-20 sm:mt-26">
       <div className="relative w-full h-[70vh]">
         <Image src={blog.img} alt={blog.title} fill className="object-cover" />
 
@@ -20,7 +21,7 @@ export default async function SinglBlogPage({ params }: Params) {
       </div>
 
       <div className="my-10 container w-[80%] mx-auto">
-        <p className=" my-10 text-2xl">{blog.descr}</p>
+        <P txt={blog.descr} className="my-10"></P>
         <div>
           <video
             className="w-[400px] object-cover"

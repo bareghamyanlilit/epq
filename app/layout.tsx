@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import BackToTop from "@/components/TopButton";
 
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className=" text-[#333] bg-[#f4f9ff]">
         <Header/>
         {children}
+        <BackToTop/>
         <Footer/>
       </body>
     </html>

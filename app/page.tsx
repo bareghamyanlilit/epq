@@ -1,9 +1,10 @@
-import { data } from "../data";
+
+import { data } from "../data/dataAM";
 import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="HomePage  bg-[#004471]">
+    <div className="HomePage  bg-[#004471]  mt-20 sm:mt-26">
 
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh]">
@@ -20,6 +21,7 @@ export default function HomePage() {
             <span className="text-white">_____________</span>
           </h1>
           <p className="text-white mt-2 text-sm sm:text-lg md:text-xl max-w-2xl">{data.homeInfo.descr}</p>
+          
         </div>
       </div>
 
@@ -34,6 +36,7 @@ export default function HomePage() {
             >
               <div className="flex w-full lg:w-1/2 h-64 lg:h-full bg-white text-gray-700 p-6 lg:p-10 items-center justify-center text-center">
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">{elm[0]}</h2>
+                
               </div>
               <div className="w-full lg:w-1/2 h-64 lg:h-full relative">
                 <Image 

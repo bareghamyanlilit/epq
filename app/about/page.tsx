@@ -1,15 +1,16 @@
 import Link from "next/link";
-import { data } from "../../data";
+import { data } from "../../data/dataAM";
+import H2 from "@/components/title";
+import P from "@/components/descr";
 export default function AboutPage() {
   return (
-    <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto">
+    <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto mt-20 sm:mt-36">
       <div className="">
-        <h2 className=" text-4xl text-[#004471] font-bold text-center mt-18 mb-7 hidden sm:block">
-          {data.aboutInfo.title}
-        </h2>
-        <h4 className=" text-xl font-bold sm:text-2xl py-4">{data.aboutInfo.title2}</h4>
-        <p className="text-sm sm:text-xl/8">{data.aboutInfo.descr}</p>
-
+        <H2 txt={data.aboutInfo.title} className=" hidden sm:block"></H2>
+        <h4 className=" text-xl font-bold sm:text-2xl py-4">
+          {data.aboutInfo.title2}
+        </h4>
+        <P txt={data.aboutInfo.descr}></P>
         <video
           className="w-full max-h-[600px] object-cover mt-12"
           controls
@@ -17,15 +18,13 @@ export default function AboutPage() {
           muted
           loop
         >
-          <source src={data.aboutInfo.video} type="video/mp4" /> Ձեր դիտարկիչը չի
-          աջակցում տեսանյութերի նվագարկմանը։
+          <source src={data.aboutInfo.video} type="video/mp4" /> Ձեր դիտարկիչը
+          չի աջակցում տեսանյութերի նվագարկմանը։
         </video>
       </div>
 
       <div className=" justify-items-center">
-        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
-          {data.aboutInfo.departmentsPartTitle}
-        </h2>
+        <H2 txt={data.aboutInfo.departmentsPartTitle}></H2>
         <ul className="grid gap-4 sm:gap-8 w-full sm:w-2xl">
           {data.aboutInfo.departments.map((e, i) => (
             <li
@@ -39,12 +38,8 @@ export default function AboutPage() {
       </div>
 
       <div>
-        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
-          {data.aboutInfo.admissionsData.title}
-        </h2>
-        <p className="mb-4 text-sm sm:text-xl/8 text-[#1a1a1a]">
-          {data.aboutInfo.admissionsData.descr}
-        </p>
+        <H2 txt={data.aboutInfo.admissionsData.title}></H2>
+        <P txt={data.aboutInfo.descr} className="mb-4 "></P>
 
         <div className="overflow-x-auto ">
           <table className="w-full border-0 text-left text-sm sm:text-base">
@@ -63,7 +58,7 @@ export default function AboutPage() {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {data.aboutInfo.admissionsData.table.slice(1).map((e, i) => (
-                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50" } >
+                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                   <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[0]}</td>
                   <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[1]}</td>
                   <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[2]}</td>
@@ -75,12 +70,8 @@ export default function AboutPage() {
       </div>
 
       <div>
-        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
-          {data.aboutInfo.remotelyAdmissionsData.title}
-        </h2>
-        <p className="mb-4 text-sm sm:text-xl/8 text-[#1a1a1a]">
-          {data.aboutInfo.remotelyAdmissionsData.descr}
-        </p>
+        <H2 txt={data.aboutInfo.remotelyAdmissionsData.title}></H2>
+        <P txt={data.aboutInfo.remotelyAdmissionsData.descr} className="mb-4 "></P>
 
         <div className="overflow-x-auto ">
           <table className="w-full border-0 text-left text-sm sm:text-base">
@@ -98,22 +89,25 @@ export default function AboutPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
-              {data.aboutInfo.remotelyAdmissionsData.table.slice(1).map((e, i) => (
-                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[0]}</td>
-                  <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[1]}</td>
-                  <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[2]}</td>
-                </tr>
-              ))}
+              {data.aboutInfo.remotelyAdmissionsData.table
+                .slice(1)
+                .map((e, i) => (
+                  <tr
+                    key={i}
+                    className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                  >
+                    <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[0]}</td>
+                    <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[1]}</td>
+                    <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[2]}</td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>
       </div>
 
       <div className="px-4 md:px-8 py-8">
-        <h2 className="text-xl sm:text-4xl text-[#004471] font-bold text-center mt-18 mb-10">
-          {data.aboutInfo.partnersPartTitle}
-        </h2>
+        <H2 txt={data.aboutInfo.partnersPartTitle}></H2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {data.aboutInfo.partners.map((e, i) => (
@@ -126,9 +120,8 @@ export default function AboutPage() {
                 alt={e.descr}
                 className="w-24 h-24 object-contain mb-4"
               />
-              <p className="text-[17px] font-semibold text-[#1a1a1a] leading-snug">
-                {e.descr}
-              </p>
+              <P txt={e.descr} className="font-semibold"></P>
+
             </div>
           ))}
         </div>

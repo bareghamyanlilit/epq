@@ -1,21 +1,23 @@
 'use client'
 import Link from 'next/link';
-import { data } from '../data';
+import { data } from '../data/dataAM';
 import Image from 'next/image';
+import P from './descr';
 
 export function Footer() {
   return (
-    <footer className="Footer bg-[#004471] text-white py-10 px-5 font-[Segoe UI, sans-serif]">
+    <footer className="Footer bg-[#004471] text-white py-10 px-5 font-[Segoe UI, sans-serif] mt-10">
       <div className="container mx-auto flex flex-col md:flex-row flex-wrap justify-around gap-10 text-center md:text-left">
 
         {/* About / First Info */}
         <div className="flex flex-col gap-4 md:w-[250px]">
           <h2 className="text-xl sm:text-2xl font-bold">{data.footer.firstInfo.title}</h2>
-          <p className="text-sm sm:text-base">{data.footer.firstInfo.descr}</p>
+          <P txt={data.footer.firstInfo.descr} className='text-white'></P>
+
         </div>
 
         {/* Pages Links */}
-        <div className="flex flex-col gap-4 md:w-[200px]">
+        {/* <div className="flex flex-col gap-4 md:w-[200px]">
           <h2 className="text-xl sm:text-2xl font-bold">{data.footer.pagesLinks.title}</h2>
           <ul className="flex flex-col gap-2 text-sm sm:text-base">
             {data.footer.pagesLinks.links.map((item) => (
@@ -24,7 +26,7 @@ export function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </div> */}
 
         {/* Contact Info */}
         <div className="flex flex-col gap-4 md:w-[250px]">
@@ -47,7 +49,7 @@ export function Footer() {
                   alt={`social-${idx}`} 
                   width={40} 
                   height={40} 
-                  className="hover:scale-110 transition-transform duration-200"
+                  className="hover:scale-110 transition-transform duration-200 rounded-full"
                 />
               </li>
             ))}

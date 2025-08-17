@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { data } from "../../data";
+import { data } from "../../data/dataAM";
+import P from "@/components/descr";
 export default function BlogPage() {
   return (
-    <div className="BlogPage ">
+    <div className="BlogPage mt-20 sm:mt-26 ">
       <section id="blog" className="">
         <div className="main-box flex flex-col md:flex-row h-[90vh] bg-[#e6eeff] w-full">
           <div className="left relative md:w-5/12 h-full flex items-center justify-center">
@@ -36,11 +37,10 @@ export default function BlogPage() {
                     <h2 className="text-lg md:text-xl font-semibold text-white mb-1">
                       {item.title}
                     </h2>
-                    <p className="text-sm md:text-base text-white mb-4">
-                      {item.descr.length > 100
+                    <P txt={item.descr.length > 100
                         ? item.descr.slice(0, 100) + "..."
                         : item.descr}
-                    </p>
+                        className="text-white mb-4"></P>
                     <button className=" text-[white] px-4 py-2 text-sm rounded hover:bg-transparent hover:text-[#ffe0b2] border border-[#ffe0b2] transition-all duration-300">
                       <Link href={`singlBlog/${item.id}`}>Ավելին</Link>
                     </button>
