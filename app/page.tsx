@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="HomePage  bg-[#004471]  mt-20 sm:mt-26">
+    <div className="HomePage  bg-[#004471]  mt-18 sm:mt-26">
 
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh]">
