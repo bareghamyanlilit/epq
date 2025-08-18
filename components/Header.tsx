@@ -46,7 +46,7 @@ export function Header() {
             <ul className="flex gap-6 font-medium text-base">
               {data.headerLinks.map((item) => {
                 
-          const isActive = activeLink === item[0]; // եթե state-ի մեջ է → կարմիր
+          const isActive = activeLink === item[0]; 
               return(
                 <li key={item[0]}>
                 <Link
@@ -54,7 +54,7 @@ export function Header() {
                   className={`font-bold hover:underline transition-colors duration-300 ${
                     isActive ? "text-[#008eff]" : "text-white"
                   }`}
-                  onClick={() => setActiveLink(item[0])} // սեղմելիս setActive
+                  onClick={() => setActiveLink(item[0])} 
                 >
                     {item[1]}
                   </Link>

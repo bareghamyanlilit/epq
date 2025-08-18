@@ -3,7 +3,7 @@ import { data } from "../../data/dataAM";
 import P from "@/components/descr";
 export default function BlogPage() {
   return (
-    <div className="BlogPage mt-20 sm:mt-26 ">
+    <div className="BlogPage mt-18 sm:mt-26 ">
       <section id="blog" className="">
         <div className="main-box flex flex-col md:flex-row h-[90vh] bg-[#e6eeff] w-full">
           <div className="left relative md:w-5/12 h-full flex items-center justify-center">

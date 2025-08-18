@@ -5,7 +5,7 @@ import P from "@/components/descr";
 
 export default function DepartmentsPage() {
   return (
-    <div className="DepartmentsPage  mt-20 sm:mt-26">
+    <div className="DepartmentsPage  mt-18 sm:mt-26">
       {/* Hero Section (80vh) */}
       <div className="relative w-full h-[50vh] sm:h-[80vh] mb-6 sm:mb-0">
         <Image

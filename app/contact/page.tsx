@@ -2,7 +2,7 @@ import Image from "next/image";
 import { data } from "../../data/dataAM";
 export default function ContactPage() {
   return (
-    <div className="ContactPage  mt-20 sm:mt-26">
+    <div className="ContactPage  mt-18 sm:mt-26">
   {/* Hero Section */}
   <div className="relative w-full h-[30vh] sm:h-[70vh] flex items-center justify-center">
     <Image

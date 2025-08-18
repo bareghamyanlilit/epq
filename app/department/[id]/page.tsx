@@ -12,7 +12,7 @@ export default async function MasnPage({ params }: Params) {
   console.log(department.color);
   
   return (
-    <div className="masn  mt-20 sm:mt-26">
+    <div className="masn  mt-18 sm:mt-26">
       <div
        style={{ backgroundColor: department.color }}
         className={`hero  text-white text-center border-t-2 border-white p-6 sm:p-12`}

@@ -4,7 +4,7 @@ import H2 from "@/components/title";
 import P from "@/components/descr";
 export default function AboutPage() {
   return (
-    <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto mt-20 sm:mt-36">
+    <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto mt-18 sm:mt-36">
       <div className="">
         <H2 txt={data.aboutInfo.title} className=" hidden sm:block"></H2>
         <h4 className=" text-xl font-bold sm:text-2xl py-4">

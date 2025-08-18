@@ -11,7 +11,7 @@ export default async function SinglBlogPage({ params }: Params) {
 
   const blog = data.blogInfo.infoVideo[id];
   return (
-    <div className="SinglBlogPage  mt-20 sm:mt-26">
+    <div className="SinglBlogPage  mt-18 sm:mt-26">
       <div className="relative w-full h-[70vh]">
         <Image src={blog.img} alt={blog.title} fill className="object-cover" />
 
