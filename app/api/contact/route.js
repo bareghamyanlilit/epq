@@ -1,11 +1,9 @@
-// app/api/contact/route.js
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
     const { name, email, message } = await req.json();
 
-    // Nodemailer setup (Gmail կամ ուրիշ SMTP)
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
