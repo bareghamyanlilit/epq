@@ -23,7 +23,6 @@ export default function DepartmentsPage() {
             <p className="text-white mt-2 text-base md:text-xl">
               {data.departmentsInfo.descr}
             </p>
-            
           </div>
         </div>
       </div>
@@ -39,12 +38,17 @@ export default function DepartmentsPage() {
               className={`flex flex-col ${directionClass} items-center gap-4 sm:gap-8 h-auto sm:h-[100vh]`}
             >
               <div className="w-full md:w-1/2 p-2 sm:py-0 space-y-4 text-center justify-items-center">
-                <img
-                  src={e.childImg}
-                  alt={e.title}
-                  className="hidden sm:block w-20 h-20 object-contain"
-                />
-                <h3 className=" text-xl sm:text-3xl font-semibold">{e.title}</h3>
+                <div className="hidden sm:block w-20 h-20 relative">
+                  <Image
+                    src={e.childImg}
+                    alt={e.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <h3 className=" text-xl sm:text-3xl font-semibold">
+                  {e.title}
+                </h3>
                 <P txt={e.descr} className="mt-4"></P>
                 <Link
                   href={`/department/${i}`}

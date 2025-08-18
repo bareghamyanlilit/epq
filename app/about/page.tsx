@@ -2,6 +2,7 @@ import Link from "next/link";
 import { data } from "../../data/dataAM";
 import H2 from "@/components/title";
 import P from "@/components/descr";
+import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto mt-18 sm:mt-36">
@@ -71,7 +72,10 @@ export default function AboutPage() {
 
       <div>
         <H2 txt={data.aboutInfo.remotelyAdmissionsData.title}></H2>
-        <P txt={data.aboutInfo.remotelyAdmissionsData.descr} className="mb-4 "></P>
+        <P
+          txt={data.aboutInfo.remotelyAdmissionsData.descr}
+          className="mb-4 "
+        ></P>
 
         <div className="overflow-x-auto ">
           <table className="w-full border-0 text-left text-sm sm:text-base">
@@ -115,13 +119,14 @@ export default function AboutPage() {
               key={i}
               className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center"
             >
-              <img
-                src={e.img}
-                alt={e.descr}
-                className="w-24 h-24 object-contain mb-4"
+              <Image
+                src={e.img} 
+                alt={e.descr} 
+                width={96} 
+                height={96}
+                className="object-contain mb-4"
               />
               <P txt={e.descr} className="font-semibold"></P>
-
             </div>
           ))}
         </div>

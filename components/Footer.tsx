@@ -1,5 +1,4 @@
 'use client'
-import Link from 'next/link';
 import { data } from '../data/dataAM';
 import Image from 'next/image';
 import P from './descr';

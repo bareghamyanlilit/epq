@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { data } from "../../data/dataAM";
 import P from "@/components/descr";
+import Image from "next/image";
 export default function BlogPage() {
   return (
     <div className="BlogPage mt-18 sm:mt-26 ">
@@ -28,19 +29,26 @@ export default function BlogPage() {
             {data.blogInfo.infoVideo.map((item, i) => (
               <div key={i}>
                 <div className="relative w-[450px] bg-[#004471] rounded-lg overflow-hidden shadow-lg">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-65 object-cover"
-                  />
+                  <div className="relative w-full h-65">
+                    <Image
+                      src={item.img}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                   <div className="p-5">
                     <h2 className="text-lg md:text-xl font-semibold text-white mb-1">
                       {item.title}
                     </h2>
-                    <P txt={item.descr.length > 100
-                        ? item.descr.slice(0, 100) + "..."
-                        : item.descr}
-                        className="text-white mb-4"></P>
+                    <P
+                      txt={
+                        item.descr.length > 100
+                          ? item.descr.slice(0, 100) + "..."
+                          : item.descr
+                      }
+                      className="text-white mb-4"
+                    ></P>
                     <button className=" text-[white] px-4 py-2 text-sm rounded hover:bg-transparent hover:text-[#ffe0b2] border border-[#ffe0b2] transition-all duration-300">
                       <Link href={`singlBlog/${item.id}`}>Ավելին</Link>
                     </button>

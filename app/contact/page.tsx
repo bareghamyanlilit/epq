@@ -7,11 +7,13 @@ export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("Ուղարկվում է...");
 
@@ -80,25 +82,35 @@ export default function ContactPage() {
 
             <div className="flex justify-center lg:justify-start mt-5 gap-3">
               <a href="#" aria-label="Facebook">
-                <img
-                  src="/img/facebook.png"
-                  alt="Facebook"
-                  className="w-[40px] sm:w-[50px] rounded-full hover:scale-110 transition-transform duration-200"
-                />
+                <div className="w-[40px] sm:w-[50px] relative rounded-full hover:scale-110 transition-transform duration-200">
+                  <Image
+                    src="/img/facebook.png"
+                    alt="Facebook"
+                    fill
+                    className="rounded-full object-contain"
+                  />
+                </div>
               </a>
+
               <a href="#" aria-label="Instagram">
-                <img
-                  src="/img/insta.png"
-                  alt="Instagram"
-                  className="w-[40px] sm:w-[50px] rounded-full hover:scale-110 transition-transform duration-200 "
-                />
+                <div className="w-[40px] sm:w-[50px] relative rounded-full hover:scale-110 transition-transform duration-200">
+                  <Image
+                    src="/img/insta.png"
+                    alt="Instagram"
+                    fill
+                    className="rounded-full object-contain"
+                  />
+                </div>
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
           <div className="w-full lg:w-[50%] mx-auto">
-            <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
+            <form
+              onSubmit={handleSubmit}
+              className="w-full flex flex-col gap-4"
+            >
               <input
                 type="text"
                 name="name"
