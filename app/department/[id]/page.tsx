@@ -51,7 +51,7 @@ export default async function MasnPage({ params }: Params) {
                 {department.infoParts.info.map((item, i) => (
                   <div key={i}>
                     <div className="relative flex-col flex sm:flex-row items-center  mb-12">
-                      <div className="relative w-[600px] h-[250px] sm:h-[500px]">
+                      <div className="relative w-full h-[250px] sm:h-[500px]">
                         <Image
                           src={item.img}
                           alt="img"
