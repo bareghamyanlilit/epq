@@ -3,6 +3,9 @@ import { data } from "../../data/dataAM";
 import H2 from "@/components/title";
 import P from "@/components/descr";
 import Image from "next/image";
+
+// Մեր մասին էջ
+
 export default function AboutPage() {
   return (
     <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto mt-18 sm:mt-36">
@@ -40,29 +43,27 @@ export default function AboutPage() {
 
       <div>
         <H2 txt={data.aboutInfo.admissionsData.title}></H2>
-        <P txt={data.aboutInfo.descr} className="mb-4 "></P>
+        <P txt={data.aboutInfo.admissionsData.descr} className="mb-4 "></P>
 
         <div className="overflow-x-auto ">
           <table className="w-full border-0 text-left text-sm sm:text-base">
             <thead>
               <tr className="bg-[#003865] text-white  text-sm sm:text-xl">
-                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
-                  {data.aboutInfo.admissionsData.table[0][0]}
-                </th>
-                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
-                  {data.aboutInfo.admissionsData.table[0][1]}
-                </th>
-                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
-                  {data.aboutInfo.admissionsData.table[0][2]}
-                </th>
+                {data.aboutInfo.admissionsData.table[0].map((elem, i) => (
+                  <th key={i} className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
+                    {elem}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
               {data.aboutInfo.admissionsData.table.slice(1).map((e, i) => (
                 <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                  <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[0]}</td>
-                  <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[1]}</td>
-                  <td className=" px-3 py-2 sm:px-6 sm:py-5 ">{e[2]}</td>
+                  {e.map((elem, i) => (
+                    <td key={i} className=" px-3 py-2 sm:px-6 sm:py-5 ">
+                      {elem}
+                    </td>
+                  ))}
                 </tr>
               ))}
             </tbody>
@@ -81,15 +82,16 @@ export default function AboutPage() {
           <table className="w-full border-0 text-left text-sm sm:text-base">
             <thead>
               <tr className="bg-[#003865] text-white  text-sm sm:text-xl">
-                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
-                  {data.aboutInfo.remotelyAdmissionsData.table[0][0]}
-                </th>
-                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
-                  {data.aboutInfo.remotelyAdmissionsData.table[0][1]}
-                </th>
-                <th className=" px-3 py-2 sm:px-6 sm:py-5 font-bold">
-                  {data.aboutInfo.remotelyAdmissionsData.table[0][2]}
-                </th>
+                {data.aboutInfo.remotelyAdmissionsData.table[0].map(
+                  (elem, i) => (
+                    <th
+                      key={i}
+                      className=" px-3 py-2 sm:px-6 sm:py-5 font-bold"
+                    >
+                      {elem}
+                    </th>
+                  )
+                )}
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-100">
@@ -100,9 +102,11 @@ export default function AboutPage() {
                     key={i}
                     className={i % 2 === 0 ? "bg-white" : "bg-gray-50"}
                   >
-                    <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[0]}</td>
-                    <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[1]}</td>
-                    <td className=" px-3 py-2 sm:px-6 sm:py-5">{e[2]}</td>
+                    {e.map((elem, i) => (
+                      <td key={i} className=" px-3 py-2 sm:px-6 sm:py-5 ">
+                        {elem}
+                      </td>
+                    ))}
                   </tr>
                 ))}
             </tbody>
@@ -120,9 +124,9 @@ export default function AboutPage() {
               className="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center"
             >
               <Image
-                src={e.img} 
-                alt={e.descr} 
-                width={96} 
+                src={e.img}
+                alt={e.descr}
+                width={96}
                 height={96}
                 className="object-contain mb-4"
               />

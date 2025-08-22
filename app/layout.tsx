@@ -17,8 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className=" text-[#333] bg-[#f4f9ff]">
-        <Header/>
+      <body className=" text-[#333] ">
+        <Header />
         {children}
         <BackToTop/>
         <Footer/>

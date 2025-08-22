@@ -1,6 +1,11 @@
 export const data = {
   title:'ԷՋՄԻԱԾՆԻ ՎԱՐԴԳԵՍ ՀԱՄԱԶԱՍՊՅԱՆԻ ԱՆՎԱՆ ՊԵՏԱԿԱՆ ՔՈԼԵՋ',
   lang: [
+    // {
+    //   src: "/img/am.jpg",
+    //   lan: "am",
+    // },
+    
     ["/img/am.jpg", "Հայերեն",'am'],
     ["/img/ru.jpg", "Ռուսերեն",'ru'],
     ["/img/us.jpg", "Անգլերեն",'en'],

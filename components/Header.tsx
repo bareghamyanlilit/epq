@@ -54,10 +54,10 @@ export function Header() {
           {/* Navigation (desktop) */}
           <nav className="hidden md:block">
             <ul className="flex gap-6 font-medium text-base">
-              {data.headerLinks.map((item) => {
+              {data.headerLinks.map((item,i) => {
                 const isActive = activeLink === item[0];
                 return (
-                  <li key={item[0]}>
+                  <li key={i}>
                     <Link
                       href={item[0]}
                       className={`font-bold hover:underline transition-colors duration-300 ${
@@ -75,9 +75,9 @@ export function Header() {
 
           {/* Languages (desktop) */}
           <div className="hidden md:flex items-center gap-2">
-            {data.lang.map((item) => (
+            {data.lang.map((item,i) => (
               <Image
-                key={item[1]}
+                key={i}
                 src={item[0]}
                 alt={item[1]}
                 width={35}
@@ -96,10 +96,10 @@ export function Header() {
           }`}
         >
           <ul className="flex flex-col text-center font-medium text-sm">
-            {data.headerLinks.map((item) => {
+            {data.headerLinks.map((item,i) => {
               const isActive = activeLink === item[0];
               return (
-                <li key={item[0]}>
+                <li key={i}>
                   <Link
                     href={item[0]}
                     className={`block py-2 font-bold hover:underline text-sm transition-colors duration-300 ${
@@ -119,9 +119,9 @@ export function Header() {
 
           {/* Languages in mobile */}
           <div className="flex justify-center gap-2 mt-3">
-            {data.lang.map((item) => (
+            {data.lang.map((item,i) => (
               <Image
-                key={item[1]}
+                key={i}
                 src={item[0]}
                 alt={item[1]}
                 width={35}

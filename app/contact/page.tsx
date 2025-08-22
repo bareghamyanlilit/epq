@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { data } from "../../data/dataAM";
 
+
+// Կապի էջ
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
@@ -48,14 +50,14 @@ export default function ContactPage() {
           priority
         />
         <h1 className="hidden sm:block text-2xl sm:text-4xl font-bold text-white bg-black/40 p-6 rounded-2xl text-center">
-          Կապ մեզ հետ
+          {data.infoContact.contact}
         </h1>
       </div>
 
       {/* Contact Info + Form */}
       <div className="mx-auto bg-white mt-0 sm:-mt-12 mb-0 sm:mb-10 p-6 sm:p-16 sm:rounded-xl shadow-lg w-full sm:w-[70%] max-w-6xl">
         <h2 className="text-center text-xl sm:text-3xl text-[#004471] mb-10 sm:mb-12 font-bold">
-          Ունե՞ս հարցեր կամ առաջարկություններ
+          {data.infoContact.title}
         </h2>
 
         <div className="flex flex-col lg:flex-row justify-between gap-10">
@@ -63,20 +65,20 @@ export default function ContactPage() {
           <div className="text-[16px] sm:text-[18px] leading-loose max-w-md mx-auto lg:mx-0 text-center lg:text-left">
             <ul className="list-none p-0">
               <li>
-                <strong className="text-[#004471]">📍 Հասցե:</strong>{" "}
-                {data.infoContact.location}
+                <strong className="text-[#004471]">📍 {data.infoContact.location[0]}:</strong>{" "}
+                {data.infoContact.location[1]}
               </li>
               <li>
-                <strong className="text-[#004471]">📞 Հեռախոս:</strong>{" "}
-                {data.infoContact.phone}
+                <strong className="text-[#004471]">📞 {data.infoContact.phone[0]}:</strong>{" "}
+                {data.infoContact.phone[1]}
               </li>
               <li>
-                <strong className="text-[#004471]">📧 Էլ․ փոստ:</strong>{" "}
-                {data.infoContact.mail}
+                <strong className="text-[#004471]">📧 {data.infoContact.email[0]}:</strong>{" "}
+                {data.infoContact.email[1]}
               </li>
               <li>
-                <strong className="text-[#004471]">⏰ Ժամեր:</strong>{" "}
-                {data.infoContact.days} , {data.infoContact.hours}
+                <strong className="text-[#004471]">⏰ {data.infoContact.hours[0]}:</strong>{" "}
+                {data.infoContact.hours[1]}
               </li>
             </ul>
 
@@ -142,7 +144,7 @@ export default function ContactPage() {
                 type="submit"
                 className="bg-[#004471] text-white px-6 py-3 rounded-lg text-[16px] hover:bg-[#002d4f] transition-colors"
               >
-                Ուղարկել
+                {data.infoContact.buttonTxt}
               </button>
             </form>
 

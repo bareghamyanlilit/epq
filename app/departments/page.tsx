@@ -3,6 +3,7 @@ import Link from "next/link";
 import { data } from "../../data/dataAM";
 import P from "@/components/descr";
 
+// Բոլոր մասնագիտությունների էջ
 export default function DepartmentsPage() {
   return (
     <div className="DepartmentsPage  mt-18 sm:mt-26">
@@ -46,19 +47,19 @@ export default function DepartmentsPage() {
                     className="object-contain"
                   />
                 </div>
-                <h3 className=" text-xl sm:text-3xl font-semibold">
+                <h3 className=" text-base sm:text-3xl font-semibold">
                   {e.title}
                 </h3>
                 <P txt={e.descr} className="mt-4"></P>
                 <Link
                   href={`/department/${i}`}
-                  className=" text-xl text-blue-600 underline hover:text-blue-800"
+                  className=" text-base sm:text-xl text-blue-600  hover:text-blue-800 border-1 border-blue-500 rounded px-3 py-1 "
                 >
                   {e.linkTxt}
                 </Link>
               </div>
 
-              <div className="w-full md:w-1/2 relative h-[50vh] sm:h-[100vh]">
+              <div className="w-full md:w-1/2 relative h-[30vh] sm:h-[100vh]">
                 <Image
                   src={e.img}
                   alt={e.title}

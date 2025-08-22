@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="HomePage  bg-[#004471]  mt-18 sm:mt-26">
+    <div className="HomePage  bg-[#ffffff]  mt-18 sm:mt-26">
 
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh]">
@@ -26,16 +26,16 @@ export default function HomePage() {
       </div>
 
       {/* Info Images Section */}
-      <div className="infoImg flex flex-col sm:gap-10 sm:mt-10">
+      <div className="infoImg flex flex-col ">
         {data.homeInfo.infoImg.map((elm, i) => {
           const reverse = i % 2 === 1;
           return (
             <div 
-              key={elm[1]} 
+              key={i} 
               className={`flex flex-col lg:flex-row ${reverse ? "lg:flex-row-reverse" : ""} h-auto lg:h-[80vh]`}
             >
-              <div className="flex w-full lg:w-1/2 h-64 lg:h-full bg-white text-gray-700 p-6 lg:p-10 items-center justify-center text-center">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold">{elm[0]}</h2>
+              <div className="flex w-full lg:w-1/2 lg:h-full bg-white text-gray-700 p-6 lg:p-10 items-center justify-center text-center">
+                <h2 className="text-sm sm:text-xl lg:text-2xl font-bold">{elm[0]}</h2>
                 
               </div>
               <div className="w-full lg:w-1/2 h-64 lg:h-full relative">
@@ -52,7 +52,7 @@ export default function HomePage() {
           )
         })}
       </div>
-
+      
     </div>
   );
 }
