@@ -9,7 +9,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh]">
         <Image
-          src="/img/slide2.jpg"
+          src={data.homeInfo.src}
           alt="Քոլեջի պատկերը"
           fill
           className="object-cover  brightness-[0.5] "
