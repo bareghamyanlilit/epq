@@ -1,12 +1,15 @@
+'use client'
+
 import Link from "next/link";
-import { data } from "../../data/dataAM";
 import H2 from "@/components/title";
 import P from "@/components/descr";
 import Image from "next/image";
+import { useLanguage } from "@/context/LangContext";
 
 // Մեր մասին էջ
 
 export default function AboutPage() {
+  const { data } = useLanguage();
   return (
     <div className="AboutPage  container w-[90%] sm:w-[80%] mx-auto mt-18 sm:mt-36">
       <div className="">

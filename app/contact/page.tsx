@@ -1,11 +1,14 @@
 "use client";
+
 import { useState } from "react";
 import Image from "next/image";
-import { data } from "../../data/dataAM";
+import { useLanguage } from "@/context/LangContext";
 
 
 // Կապի էջ
 export default function ContactPage() {
+  const { data } = useLanguage();
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [status, setStatus] = useState("");
 

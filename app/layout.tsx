@@ -3,7 +3,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import BackToTop from "@/components/TopButton";
-
+import { LangProvider } from "@/context/LangContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,10 +18,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className=" text-[#333] ">
-        <Header />
-        {children}
-        <BackToTop/>
-        <Footer/>
+        <LangProvider>
+          <Header />
+          {children}
+          <BackToTop />
+          <Footer />
+        </LangProvider>
       </body>
     </html>
   );

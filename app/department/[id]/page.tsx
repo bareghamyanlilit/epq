@@ -1,6 +1,8 @@
+'use client'
+
 import P from "@/components/descr";
-import { data } from "../../../data/dataAM";
 import Image from "next/image";
+import { useLanguage } from "@/context/LangContext";
 
 
 // Ընտրված մասնագիտության էջ
@@ -9,6 +11,8 @@ type Params = {
 };
 
 export default async function MasnPage({ params }: Params) {
+  const { data } = useLanguage();
+
   const { id } = await params;
   const department = data.departments[id];
   console.log(department.color);

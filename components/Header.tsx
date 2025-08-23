@@ -3,9 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { data } from "../data/dataAM";
+
+import { useLanguage } from "@/context/LangContext";
 
 export function Header() {
+  const { setCurrentLang, data } = useLanguage();
+
   const [isOpen, setIsOpen] = useState(false);
 
   const [activeLink, setActiveLink] = useState("");
@@ -54,7 +57,7 @@ export function Header() {
           {/* Navigation (desktop) */}
           <nav className="hidden md:block">
             <ul className="flex gap-6 font-medium text-base">
-              {data.headerLinks.map((item,i) => {
+              {data.headerLinks.map((item, i) => {
                 const isActive = activeLink === item[0];
                 return (
                   <li key={i}>
@@ -75,17 +78,53 @@ export function Header() {
 
           {/* Languages (desktop) */}
           <div className="hidden md:flex items-center gap-2">
-            {data.lang.map((item,i) => (
+            <button
+              onClick={() => {
+                setCurrentLang("am");
+                localStorage.setItem("lang", "am");
+              }}
+            >
               <Image
-                key={i}
-                src={item[0]}
-                alt={item[1]}
+                src={data.lang[0][0]}
+                alt={data.lang[0][1]}
                 width={35}
                 height={20}
                 className="w-6 h-4 sm:w-8 sm:h-5 md:w-9 md:h-6"
-                title={item[1]}
+                title={data.lang[0][1]}
               />
-            ))}
+            </button>
+
+            <button
+              onClick={() => {
+                setCurrentLang("ru");
+                localStorage.setItem("lang", "ru");
+              }}
+            >
+              <Image
+                src={data.lang[1][0]}
+                alt={data.lang[1][1]}
+                width={35}
+                height={20}
+                className="w-6 h-4 sm:w-8 sm:h-5 md:w-9 md:h-6"
+                title={data.lang[1][1]}
+              />
+            </button>
+
+            <button
+              onClick={() => {
+                setCurrentLang("en");
+                localStorage.setItem("lang", "en");
+              }}
+            >
+              <Image
+                src={data.lang[2][0]}
+                alt={data.lang[2][1]}
+                width={35}
+                height={20}
+                className="w-6 h-4 sm:w-8 sm:h-5 md:w-9 md:h-6"
+                title={data.lang[2][1]}
+              />
+            </button>
           </div>
         </div>
 
@@ -96,7 +135,7 @@ export function Header() {
           }`}
         >
           <ul className="flex flex-col text-center font-medium text-sm">
-            {data.headerLinks.map((item,i) => {
+            {data.headerLinks.map((item, i) => {
               const isActive = activeLink === item[0];
               return (
                 <li key={i}>
@@ -119,17 +158,53 @@ export function Header() {
 
           {/* Languages in mobile */}
           <div className="flex justify-center gap-2 mt-3">
-            {data.lang.map((item,i) => (
+            <button
+              onClick={() => {
+                setCurrentLang("am");
+                localStorage.setItem("lang", "am");
+              }}
+            >
               <Image
-                key={i}
-                src={item[0]}
-                alt={item[1]}
+                src={data.lang[0][0]}
+                alt={data.lang[0][1]}
                 width={35}
                 height={20}
                 className="w-6 h-4 sm:w-8 sm:h-5"
-                title={item[1]}
+                title={data.lang[0][1]}
               />
-            ))}
+            </button>
+
+            <button
+              onClick={() => {
+                setCurrentLang("ru");
+                localStorage.setItem("lang", "ru");
+              }}
+            >
+              <Image
+                src={data.lang[1][0]}
+                alt={data.lang[1][1]}
+                width={35}
+                height={20}
+                className="w-6 h-4 sm:w-8 sm:h-5"
+                title={data.lang[1][1]}
+              />
+            </button>
+
+            <button
+              onClick={() => {
+                setCurrentLang("en");
+                localStorage.setItem("lang", "en");
+              }}
+            >
+              <Image
+                src={data.lang[2][0]}
+                alt={data.lang[2][1]}
+                width={35}
+                height={20}
+                className="w-6 h-4 sm:w-8 sm:h-5"
+                title={data.lang[2][1]}
+              />
+            </button>
           </div>
         </div>
       </div>

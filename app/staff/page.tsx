@@ -1,11 +1,15 @@
+'use client'
+
 import P from "@/components/descr";
 import H2 from "@/components/title";
-import { data } from "@/data/dataAM";
+import { useLanguage } from "@/context/LangContext";
 import Image from "next/image";
 import React from "react";
 
 // Աշխատակազմի էջ
 export default function Staff() {
+  const { data } = useLanguage();
+
   return (
     <div className="Staff container w-[90%] sm:w-[80%] mx-auto  pt-18 sm:pt-26 bg-white">
       <div className="">

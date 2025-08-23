@@ -1,10 +1,11 @@
 "use client";
-import { data } from "../data/dataAM";
 import Image from "next/image";
 import P from "./descr";
 import Link from "next/link";
+import { useLanguage } from "@/context/LangContext";
 
 export function Footer() {
+  const { data } = useLanguage();
   return (
     <footer className="Footer bg-[#004471] text-white py-10 px-5 font-[Segoe UI, sans-serif] mt-10">
       <div className="container mx-auto flex flex-col md:flex-row flex-wrap justify-around gap-10 text-center md:text-left">

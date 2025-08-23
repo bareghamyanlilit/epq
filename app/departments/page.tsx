@@ -1,10 +1,13 @@
+'use client'
+
 import Image from "next/image";
 import Link from "next/link";
-import { data } from "../../data/dataAM";
 import P from "@/components/descr";
+import { useLanguage } from "@/context/LangContext";
 
 // Բոլոր մասնագիտությունների էջ
 export default function DepartmentsPage() {
+  const { data } = useLanguage();
   return (
     <div className="DepartmentsPage  mt-18 sm:mt-26">
       {/* Hero Section (80vh) */}
